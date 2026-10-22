@@ -1,0 +1,38 @@
+[
+  {
+    "id": "aurora-lamp",
+    "title": "Лампа Aurora",
+    "summary": "Тёплый свет для вечернего чтения.",
+    "image": "aurora-lamp.jpg"
+  },
+  {
+    "id": "ceramic-vase",
+    "title": "Керамическая ваза",
+    "summary": "Ручная работа, матовая глазурь.",
+    "image": "ceramic-vase.jpg"
+  },
+  {
+    "id": "linen-throw",
+    "title": "Плед из льна",
+    "summary": "Натуральные оттенки, лёгкая фактура.",
+    "image": "linen-throw.jpg"
+  },
+  {
+    "id": "oak-shelf",
+    "title": "Полка из дуба",
+    "summary": "Минималистичное крепление к стене.",
+    "image": "oak-shelf.jpg"
+  },
+  {
+    "id": "studio-chair",
+    "title": "Стул Studio",
+    "summary": "Удобная посадка для долгой работы.",
+    "image": "studio-chair.jpg"
+  },
+  {
+    "id": "glass-teapot",
+    "title": "Заварник из стекла",
+    "summary": "Смотрится красиво с настоем чая.",
+    "image": "glass-teapot.jpg"
+  }
+]

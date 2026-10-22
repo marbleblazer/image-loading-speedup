@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+
+<header class="site-header site-header--compact">
+  <div class="wrap">
+    <a class="back" href="/">← К каталогу</a>
+    <h1><%= item.title %></h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <img
+    class="item-page__img"
+    src="/images/<%= item.image %>"
+    alt="<%= item.title %>"
+  />
+  <p class="item-page__summary"><%= item.summary %></p>
+</main>
+
+<%- include('partials/foot') %>

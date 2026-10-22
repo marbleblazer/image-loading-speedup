@@ -1,0 +1,50 @@
+[
+  {
+    "file": "aurora-lamp.jpg",
+    "title": "Peacock table lamp (Tiffany Studios), Cleveland Museum of Art",
+    "source": "https://commons.wikimedia.org/wiki/File:Peacock_table_lamp_interior_detail_-_Tiffany_Studios_(49359190003).jpg",
+    "author": "Tim Evanson (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  },
+  {
+    "file": "ceramic-vase.jpg",
+    "title": "A Ceramic Vase in Kanazawa",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Ceramic_Vase_in_Kanazawa.jpg",
+    "author": "Tbatb (Wikimedia Commons)",
+    "license": "CC BY-SA 4.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  },
+  {
+    "file": "linen-throw.jpg",
+    "title": "Bed in Seattle hotel (linen bedding detail)",
+    "source": "https://commons.wikimedia.org/wiki/File:Bed_in_Seattle_hotel.jpg",
+    "author": "Liz Lawley (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  },
+  {
+    "file": "oak-shelf.jpg",
+    "title": "Part of a bookshelf containing books by Aristotle (1)",
+    "source": "https://commons.wikimedia.org/wiki/File:Part_of_a_bookshelf_containing_books_by_Aristotle_(1).jpg",
+    "author": "Roman Eisele (Wikimedia Commons)",
+    "license": "CC BY-SA 4.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  },
+  {
+    "file": "studio-chair.jpg",
+    "title": "Club chair, Jean-Michel Frank, 1939, Cooper-Hewitt Design Museum",
+    "source": "https://commons.wikimedia.org/wiki/File:Club_chair_-_Jean-Michel_Frank_(39609645132).jpg",
+    "author": "Tim Evanson (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  },
+  {
+    "file": "glass-teapot.jpg",
+    "title": "Teapot and cup at café Fly Fusion, Helsinki",
+    "source": "https://commons.wikimedia.org/wiki/File:Teapot_and_cup_at_caf%C3%A9_Fly_Fusion.jpg",
+    "author": "JIP (Wikimedia Commons)",
+    "license": "CC BY-SA 4.0",
+    "note": "Re-encoded to 4000x3000 JPEG q98 for the demo"
+  }
+]

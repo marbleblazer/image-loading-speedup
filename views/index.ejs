@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1>Мини-каталог</h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h2 class="visually-hidden">Главный баннер</h2>
+    <!-- LCP-кандидат: полноразмерный файл с диска -->
+    <img
+      class="hero__img"
+      src="/images/<%= heroImage %>"
+      alt="Товар в каталоге"
+    />
+  </section>
+
+  <section class="grid" aria-label="Товары">
+    <% items.forEach(function (item) { %>
+      <article class="card">
+        <a class="card__link" href="/item/<%= item.id %>">
+          <img
+            class="card__img"
+            src="/images/<%= item.image %>"
+            alt=""
+          />
+          <h2 class="card__title"><%= item.title %></h2>
+          <p class="card__summary"><%= item.summary %></p>
+        </a>
+      </article>
+    <% }); %>
+  </section>
+</main>
+
+<%- include('partials/foot') %>

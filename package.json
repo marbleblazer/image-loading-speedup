@@ -1,0 +1,22 @@
+{
+  "name": "image-loading-speedup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Baseline demo for an article on WebP/AVIF, sharp, and CDN",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed-baseline-images.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
