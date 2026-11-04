@@ -10,7 +10,7 @@
 <main class="wrap">
   <img
     class="item-page__img"
-    src="/images/<%= item.image %>"
+    src="<%= imageUrl(item.image, 'detail') %>"
     alt="<%= item.title %>"
   />
   <p class="item-page__summary"><%= item.summary %></p>

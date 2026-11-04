@@ -9,10 +9,10 @@
 <main class="wrap">
   <section class="hero">
     <h2 class="visually-hidden">Главный баннер</h2>
-    <!-- LCP-кандидат: полноразмерный файл с диска -->
+    <!-- LCP: вариант 1600w, не исходник 4000px -->
     <img
       class="hero__img"
-      src="/images/<%= heroImage %>"
+      src="<%= imageUrl(heroImage, 'hero') %>"
       alt="Товар в каталоге"
     />
   </section>
@@ -23,7 +23,7 @@
         <a class="card__link" href="/item/<%= item.id %>">
           <img
             class="card__img"
-            src="/images/<%= item.image %>"
+            src="<%= imageUrl(item.image, 'card') %>"
             alt=""
           />
           <h2 class="card__title"><%= item.title %></h2>

@@ -5,3 +5,6 @@ node_modules/
 public/images/*.jpg
 public/images/*.jpeg
 public/images/*.png
+public/images/*.*w.jpg
+public/images/*.*w.webp
+public/images/*.*w.avif
