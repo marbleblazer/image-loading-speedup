@@ -1,6 +1,6 @@
 /**
- * Build resized JPEG variants for the article (chapter-01-resize).
- * Reads full-size *.jpg in public/images/ (from npm run seed), writes *.400w.jpg etc.
+ * Resize + export JPEG / WebP / AVIF variants (article: formats + <picture>).
+ * Reads full-size *.jpg in public/images/ (from npm run seed).
  */
 import { readdir } from "node:fs/promises";
 import path from "node:path";
@@ -12,8 +12,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const imagesDir = path.join(__dirname, "..", "public", "images");
 
 const JPEG_QUALITY = 82;
+const WEBP_QUALITY = 80;
+const AVIF_QUALITY = 50;
 
-const VARIANT_RE = /\.\d+w\.jpe?g$/i;
+const VARIANT_RE = /\.\d+w\.(jpe?g|webp|avif)$/i;
+
+const FORMATS = ["jpg", "webp", "avif"];
 
 async function sourceFiles() {
   const names = await readdir(imagesDir);
@@ -25,6 +29,12 @@ async function sourceFiles() {
   );
 }
 
+function encode(pipeline, format) {
+  if (format === "webp") return pipeline.webp({ quality: WEBP_QUALITY });
+  if (format === "avif") return pipeline.avif({ quality: AVIF_QUALITY });
+  return pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true });
+}
+
 const sources = await sourceFiles();
 if (sources.length === 0) {
   console.error("No source JPEGs in public/images/. Run: npm run seed");
@@ -34,15 +44,19 @@ if (sources.length === 0) {
 for (const file of sources) {
   const input = path.join(imagesDir, file);
   for (const width of IMAGE_WIDTHS) {
-    const outName = variantPath(file, width);
-    const output = path.join(imagesDir, outName);
-    const info = await sharp(input)
-      .resize(width, null, { withoutEnlargement: true, kernel: "lanczos3" })
-      .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
-      .toFile(output);
+    for (const format of FORMATS) {
+      const outName = variantPath(file, width, format);
+      const info = await encode(
+        sharp(input).resize(width, null, {
+          withoutEnlargement: true,
+          kernel: "lanczos3",
+        }),
+        format,
+      ).toFile(path.join(imagesDir, outName));
 
-    const kb = Math.round(info.size / 1024);
-    console.log(`${outName}  ${info.width}×${info.height}  ~${kb} KiB`);
+      const kb = Math.round(info.size / 1024);
+      console.log(`${outName}  ${info.width}×${info.height}  ~${kb} KiB`);
+    }
   }
 }
 

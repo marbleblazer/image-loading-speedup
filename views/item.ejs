@@ -8,11 +8,15 @@
 </header>
 
 <main class="wrap">
-  <img
-    class="item-page__img"
-    src="<%= imageUrl(item.image, 'detail') %>"
-    alt="<%= item.title %>"
-  />
+  <picture>
+    <source type="image/avif" srcset="<%= imageUrl(item.image, 'detail', 'avif') %>" />
+    <source type="image/webp" srcset="<%= imageUrl(item.image, 'detail', 'webp') %>" />
+    <img
+      class="item-page__img"
+      src="<%= imageUrl(item.image, 'detail', 'jpg') %>"
+      alt="<%= item.title %>"
+    />
+  </picture>
   <p class="item-page__summary"><%= item.summary %></p>
 </main>
 

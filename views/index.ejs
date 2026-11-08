@@ -9,23 +9,31 @@
 <main class="wrap">
   <section class="hero">
     <h2 class="visually-hidden">Главный баннер</h2>
-    <!-- LCP: вариант 1600w, не исходник 4000px -->
-    <img
-      class="hero__img"
-      src="<%= imageUrl(heroImage, 'hero') %>"
-      alt="Товар в каталоге"
-    />
+    <!-- LCP: AVIF → WebP → JPEG 1600w -->
+    <picture>
+      <source type="image/avif" srcset="<%= imageUrl(heroImage, 'hero', 'avif') %>" />
+      <source type="image/webp" srcset="<%= imageUrl(heroImage, 'hero', 'webp') %>" />
+      <img
+        class="hero__img"
+        src="<%= imageUrl(heroImage, 'hero', 'jpg') %>"
+        alt="Товар в каталоге"
+      />
+    </picture>
   </section>
 
   <section class="grid" aria-label="Товары">
     <% items.forEach(function (item) { %>
       <article class="card">
         <a class="card__link" href="/item/<%= item.id %>">
-          <img
-            class="card__img"
-            src="<%= imageUrl(item.image, 'card') %>"
-            alt=""
-          />
+          <picture>
+            <source type="image/avif" srcset="<%= imageUrl(item.image, 'card', 'avif') %>" />
+            <source type="image/webp" srcset="<%= imageUrl(item.image, 'card', 'webp') %>" />
+            <img
+              class="card__img"
+              src="<%= imageUrl(item.image, 'card', 'jpg') %>"
+              alt=""
+            />
+          </picture>
           <h2 class="card__title"><%= item.title %></h2>
           <p class="card__summary"><%= item.summary %></p>
         </a>
