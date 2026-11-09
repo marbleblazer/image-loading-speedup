@@ -9,11 +9,21 @@
 
 <main class="wrap">
   <picture>
-    <source type="image/avif" srcset="<%= imageUrl(item.image, 'detail', 'avif') %>" />
-    <source type="image/webp" srcset="<%= imageUrl(item.image, 'detail', 'webp') %>" />
+    <source
+      type="image/avif"
+      srcset="<%= imageSrcset(item.image, 'avif') %>"
+      sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
+    />
+    <source
+      type="image/webp"
+      srcset="<%= imageSrcset(item.image, 'webp') %>"
+      sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
+    />
     <img
       class="item-page__img"
+      srcset="<%= imageSrcset(item.image, 'jpg') %>"
       src="<%= imageUrl(item.image, 'detail', 'jpg') %>"
+      sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
       alt="<%= item.title %>"
     />
   </picture>

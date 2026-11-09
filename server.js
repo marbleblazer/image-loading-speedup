@@ -2,7 +2,7 @@ import express from "express";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { imageUrl } from "./lib/image-url.mjs";
+import { imageUrl, imageSrcset } from "./lib/image-url.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -18,6 +18,7 @@ async function loadItems() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.locals.imageUrl = imageUrl;
+app.locals.imageSrcset = imageSrcset;
 
 app.use(express.static(path.join(__dirname, "public")));
 

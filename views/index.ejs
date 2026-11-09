@@ -9,13 +9,22 @@
 <main class="wrap">
   <section class="hero">
     <h2 class="visually-hidden">Главный баннер</h2>
-    <!-- LCP: AVIF → WebP → JPEG 1600w -->
     <picture>
-      <source type="image/avif" srcset="<%= imageUrl(heroImage, 'hero', 'avif') %>" />
-      <source type="image/webp" srcset="<%= imageUrl(heroImage, 'hero', 'webp') %>" />
+      <source
+        type="image/avif"
+        srcset="<%= imageSrcset(heroImage, 'avif') %>"
+        sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
+      />
+      <source
+        type="image/webp"
+        srcset="<%= imageSrcset(heroImage, 'webp') %>"
+        sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
+      />
       <img
         class="hero__img"
+        srcset="<%= imageSrcset(heroImage, 'jpg') %>"
         src="<%= imageUrl(heroImage, 'hero', 'jpg') %>"
+        sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
         alt="Товар в каталоге"
       />
     </picture>
@@ -26,11 +35,21 @@
       <article class="card">
         <a class="card__link" href="/item/<%= item.id %>">
           <picture>
-            <source type="image/avif" srcset="<%= imageUrl(item.image, 'card', 'avif') %>" />
-            <source type="image/webp" srcset="<%= imageUrl(item.image, 'card', 'webp') %>" />
+            <source
+              type="image/avif"
+              srcset="<%= imageSrcset(item.image, 'avif') %>"
+              sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) 50vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="<%= imageSrcset(item.image, 'webp') %>"
+              sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) 50vw, 33vw"
+            />
             <img
               class="card__img"
+              srcset="<%= imageSrcset(item.image, 'jpg') %>"
               src="<%= imageUrl(item.image, 'card', 'jpg') %>"
+              sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) 50vw, 33vw"
               alt=""
             />
           </picture>
