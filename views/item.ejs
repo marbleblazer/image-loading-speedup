@@ -21,6 +21,9 @@
     />
     <img
       class="item-page__img"
+      width="1600"
+      height="1200"
+      fetchpriority="high"
       srcset="<%= imageSrcset(item.image, 'jpg') %>"
       src="<%= imageUrl(item.image, 'detail', 'jpg') %>"
       sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"

@@ -22,6 +22,9 @@
       />
       <img
         class="hero__img"
+        width="1600"
+        height="1200"
+        fetchpriority="high"
         srcset="<%= imageSrcset(heroImage, 'jpg') %>"
         src="<%= imageUrl(heroImage, 'hero', 'jpg') %>"
         sizes="(max-width: 1132px) calc(100vw - 2rem), 1100px"
@@ -31,7 +34,7 @@
   </section>
 
   <section class="grid" aria-label="Товары">
-    <% items.forEach(function (item) { %>
+    <% items.forEach(function (item, index) { %>
       <article class="card">
         <a class="card__link" href="/item/<%= item.id %>">
           <picture>
@@ -47,6 +50,9 @@
             />
             <img
               class="card__img"
+              width="400"
+              height="300"
+              <% if (index > 0) { %>loading="lazy"<% } %>
               srcset="<%= imageSrcset(item.image, 'jpg') %>"
               src="<%= imageUrl(item.image, 'card', 'jpg') %>"
               sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) 50vw, 33vw"
