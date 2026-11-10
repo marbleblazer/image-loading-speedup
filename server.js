@@ -3,6 +3,9 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { imageUrl, imageSrcset } from "./lib/image-url.mjs";
+import { loadEnv } from "./lib/env.mjs";
+
+loadEnv();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -56,4 +59,7 @@ app.use((err, _req, res, _next) => {
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
+  if (process.env.IMAGE_BASE_URL) {
+    console.log(`images: ${process.env.IMAGE_BASE_URL}`);
+  }
 });
